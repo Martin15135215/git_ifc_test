@@ -27,7 +27,7 @@ project = run("root.create_entity", model, ifc_class="IfcProject", name="My Proj
 
 # Geometry is optional in IFC, but because we want to use geometry in this example, let's define units
 # Assigning without arguments defaults to metric units
-run("unit.assign_unit", model)
+run("unit.assign_unit", model, length = {"is_metric": True, "raw": "METERS"})
 
 # Let's create a modeling geometry context, so we can store 3D geometry (note: IFC supports 2D too!)
 context = run("context.add_context", model, context_type="Model")
